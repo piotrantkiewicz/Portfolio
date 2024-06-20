@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEj-QI-FZq">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Market View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MarketViewController" id="BYZ-38-t0r" customClass="MarketViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-h5-JLl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nLq-h5-JLl" secondAttribute="bottom" id="5bT-Ob-SU7"/>
+                            <constraint firstItem="nLq-h5-JLl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sv0-be-eo5"/>
+                            <constraint firstItem="nLq-h5-JLl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mp0-jw-bB4"/>
+                            <constraint firstItem="nLq-h5-JLl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pf7-ay-xwt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="nLq-h5-JLl" id="SlE-cN-dNy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--Portoflio View Controller-->
+        <scene sceneID="n9W-Se-ImO">
+            <objects>
+                <viewController id="wEj-QI-FZq" customClass="PortoflioViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwb-bM-Cbh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFO-W6-bQb">
+                                <rect key="frame" x="150.33333333333334" y="123" width="92.333333333333343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.53333333333333333" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$13,240.11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMq-3p-Zg5">
+                                <rect key="frame" x="120.33333333333333" y="152" width="152.66666666666669" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AWu-vo-xnx">
+                                <rect key="frame" x="0.0" y="237.33333333333331" width="393" height="614.66666666666674"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvT-Rh-Oi2">
+                                <rect key="frame" x="16" y="756" width="361" height="52"/>
+                                <color key="backgroundColor" red="0.34901960784313724" green="0.33333333333333331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="7Zl-eU-yyc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add new stock">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewStockBtnTapped:" destination="wEj-QI-FZq" eventType="touchUpInside" id="hdx-mJ-kv0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qlx-KS-fGw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AWu-vo-xnx" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" id="2eg-Os-tNe"/>
+                            <constraint firstAttribute="bottom" secondItem="AWu-vo-xnx" secondAttribute="bottom" id="CbW-TX-U39"/>
+                            <constraint firstItem="qMq-3p-Zg5" firstAttribute="centerX" secondItem="zwb-bM-Cbh" secondAttribute="centerX" id="ODe-zU-7ff"/>
+                            <constraint firstItem="CvT-Rh-Oi2" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" constant="16" id="TiK-qu-hh9"/>
+                            <constraint firstItem="qlx-KS-fGw" firstAttribute="trailing" secondItem="CvT-Rh-Oi2" secondAttribute="trailing" constant="16" id="XpO-df-IYF"/>
+                            <constraint firstItem="qlx-KS-fGw" firstAttribute="trailing" secondItem="AWu-vo-xnx" secondAttribute="trailing" id="Z5z-jw-Xh8"/>
+                            <constraint firstItem="qMq-3p-Zg5" firstAttribute="top" secondItem="sFO-W6-bQb" secondAttribute="bottom" constant="12" id="c2O-a9-2by"/>
+                            <constraint firstItem="qlx-KS-fGw" firstAttribute="bottom" secondItem="CvT-Rh-Oi2" secondAttribute="bottom" constant="10" id="l08-Qv-2IM"/>
+                            <constraint firstItem="sFO-W6-bQb" firstAttribute="top" secondItem="qlx-KS-fGw" secondAttribute="top" constant="64" id="m4n-7Q-Z5n"/>
+                            <constraint firstItem="sFO-W6-bQb" firstAttribute="centerX" secondItem="zwb-bM-Cbh" secondAttribute="centerX" id="poj-n7-1gW"/>
+                            <constraint firstItem="AWu-vo-xnx" firstAttribute="top" secondItem="qMq-3p-Zg5" secondAttribute="bottom" constant="47" id="yNs-iu-4ml"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addNewStockBtn" destination="CvT-Rh-Oi2" id="GsS-zz-hVV"/>
+                        <outlet property="portfolioLbl" destination="sFO-W6-bQb" id="czR-aa-ftj"/>
+                        <outlet property="portolioValueLbl" destination="qMq-3p-Zg5" id="mcX-Bw-BQy"/>
+                        <outlet property="tableView" destination="AWu-vo-xnx" id="3Ys-of-GNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6V-ig-EcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-570.2290076335878" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
