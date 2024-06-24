@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="KGk-i7-Jjw" customClass="StockCell" customModule="Portfolio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-jS-Mba" customClass="LineChartView" customModule="Portfolio" customModuleProvider="target">
+                        <rect key="frame" x="179" y="0.0" width="100" height="40"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="3wa-Va-rPO"/>
+                            <constraint firstAttribute="height" constant="40" id="H8w-bh-tHK"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AAPL" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-aF-iBh">
+                        <rect key="frame" x="16" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="TTh-hF-0bZ"/>
+                            <constraint firstAttribute="width" constant="40" id="pfj-OK-pVS"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple, Inc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-3T-h6O">
+                        <rect key="frame" x="68" y="24" width="49" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.42745098039215684" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$142.65" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qM-f1-KzE">
+                        <rect key="frame" x="306" y="0.0" width="53" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 0.81%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-Vx-uwi">
+                        <rect key="frame" x="313" y="21" width="46" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAPL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-9C-mYJ">
+                        <rect key="frame" x="68" y="3" width="35.333333333333343" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yh0-9C-mYJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="12k-cz-Khx"/>
+                    <constraint firstItem="aRh-3T-h6O" firstAttribute="leading" secondItem="tfe-aF-iBh" secondAttribute="trailing" constant="12" id="3OA-c0-62r"/>
+                    <constraint firstItem="tfe-aF-iBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4q7-8p-gxx"/>
+                    <constraint firstItem="yh0-9C-mYJ" firstAttribute="leading" secondItem="tfe-aF-iBh" secondAttribute="trailing" constant="12" id="FZA-MA-svi"/>
+                    <constraint firstAttribute="trailing" secondItem="0qM-f1-KzE" secondAttribute="trailing" constant="16" id="OhN-8z-9op"/>
+                    <constraint firstItem="TR1-jS-Mba" firstAttribute="leading" secondItem="aRh-3T-h6O" secondAttribute="trailing" constant="62" id="P6M-ES-miI"/>
+                    <constraint firstItem="2Wb-Vx-uwi" firstAttribute="top" secondItem="0qM-f1-KzE" secondAttribute="bottom" constant="4" id="Zmn-SB-k6x"/>
+                    <constraint firstItem="aRh-3T-h6O" firstAttribute="top" secondItem="yh0-9C-mYJ" secondAttribute="bottom" constant="4" id="cCB-eU-KNi"/>
+                    <constraint firstItem="tfe-aF-iBh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d6B-uz-e2X"/>
+                    <constraint firstAttribute="bottom" secondItem="tfe-aF-iBh" secondAttribute="bottom" constant="24" id="g7x-KH-uyl"/>
+                    <constraint firstItem="TR1-jS-Mba" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="niN-fh-54e"/>
+                    <constraint firstAttribute="trailing" secondItem="2Wb-Vx-uwi" secondAttribute="trailing" constant="16" id="pEO-AA-ap2"/>
+                    <constraint firstItem="0qM-f1-KzE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tK0-Lb-YfJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lineChart" destination="TR1-jS-Mba" id="yfk-Jc-ONi"/>
+                <outlet property="logoImage" destination="tfe-aF-iBh" id="lNP-mF-fdd"/>
+                <outlet property="stockChangeLbl" destination="2Wb-Vx-uwi" id="Udy-Hx-iUr"/>
+                <outlet property="stockValueLbl" destination="0qM-f1-KzE" id="PyR-qT-0qw"/>
+                <outlet property="subtitleLbl" destination="aRh-3T-h6O" id="acg-WQ-GiH"/>
+                <outlet property="titleLbl" destination="yh0-9C-mYJ" id="Mm8-WA-GR8"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="26.760563380281692"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="AAPL" width="40" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

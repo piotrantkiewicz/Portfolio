@@ -114,7 +114,6 @@
 				AED1D4352C24425C007A3056 /* Util */,
 				AE3179E12C21A4F600B8FA4E /* Design */,
 				AE3179DD2C21A19A00B8FA4E /* Resources */,
-				AE8722872C20DCCB005B3B72 /* StockCell */,
 				AE4CB1AE2C2341F100A3C5BC /* Portoflio */,
 				AED1D4382C244469007A3056 /* Market */,
 				AE8722732C20DBD9005B3B72 /* AppDelegate.swift */,
@@ -123,7 +122,6 @@
 				AE87227C2C20DBDA005B3B72 /* Assets.xcassets */,
 				AE87227E2C20DBDA005B3B72 /* LaunchScreen.storyboard */,
 				AE8722812C20DBDA005B3B72 /* Info.plist */,
-				AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -148,6 +146,8 @@
 		AED1D4382C244469007A3056 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */,
+				AE8722872C20DCCB005B3B72 /* StockCell */,
 				AE8722772C20DBD9005B3B72 /* MarketViewController.swift */,
 			);
 			path = Market;

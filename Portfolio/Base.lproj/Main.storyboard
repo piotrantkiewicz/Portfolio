@@ -16,22 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-h5-JLl">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-h5-JLl">
+                                <rect key="frame" x="0.0" y="339" width="393" height="513"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Movers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MK-xV-fjx">
+                                <rect key="frame" x="16" y="299" width="120" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-du-fuf">
+                                <rect key="frame" x="168.66666666666666" y="74" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsW-5B-XPs">
+                                <rect key="frame" x="12" y="59" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="0h4-3S-ukc"/>
+                                    <constraint firstAttribute="height" constant="44" id="S2s-nK-PyD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back"/>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEz-hP-tU9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tem-uA-UKc">
+                                <rect key="frame" x="337" y="59" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="WaB-Kn-qBF"/>
+                                    <constraint firstAttribute="height" constant="44" id="qMX-1v-ONm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="search"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ARC-du-fuf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="013-9l-Lex"/>
                             <constraint firstAttribute="bottom" secondItem="nLq-h5-JLl" secondAttribute="bottom" id="5bT-Ob-SU7"/>
-                            <constraint firstItem="nLq-h5-JLl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sv0-be-eo5"/>
+                            <constraint firstItem="ARC-du-fuf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="8M2-9w-iug"/>
+                            <constraint firstItem="Tem-uA-UKc" firstAttribute="top" secondItem="jsW-5B-XPs" secondAttribute="top" id="EVM-ZK-M16"/>
+                            <constraint firstItem="nLq-h5-JLl" firstAttribute="top" secondItem="4MK-xV-fjx" secondAttribute="bottom" constant="18" id="Fpb-Ff-8BW"/>
+                            <constraint firstItem="jsW-5B-XPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="VDo-nL-TZB"/>
+                            <constraint firstItem="4MK-xV-fjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vq1-dW-CjS"/>
+                            <constraint firstItem="4MK-xV-fjx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="240" id="kRD-IF-hka"/>
                             <constraint firstItem="nLq-h5-JLl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mp0-jw-bB4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tem-uA-UKc" secondAttribute="trailing" constant="12" id="okN-8c-CQ0"/>
                             <constraint firstItem="nLq-h5-JLl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pf7-ay-xwt"/>
+                            <constraint firstItem="jsW-5B-XPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tli-9d-XDE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nLq-h5-JLl" id="SlE-cN-dNy"/>
+                        <outlet property="tableViewLbl" destination="4MK-xV-fjx" id="w8b-a9-kfl"/>
+                        <outlet property="titleLbl" destination="ARC-du-fuf" id="mE9-QI-zwn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,6 +150,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="40" height="40"/>
+        <image name="search" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
