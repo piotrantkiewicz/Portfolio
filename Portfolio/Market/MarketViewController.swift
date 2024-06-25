@@ -21,6 +21,7 @@ struct TickersJson: Codable {
 class MarketViewController: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableViewLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,6 +30,7 @@ class MarketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureCollectionView()
         loadTickers()
         
         titleLbl.font = UIFont(name: FontName.intertightBold.rawValue, size: 18)
@@ -40,6 +42,12 @@ class MarketViewController: UIViewController {
         tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "StockCell")
         tableView.allowsSelection = false
     }
+    
+    private func configureCollectionView() {
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.register(UINib(nibName: "StockCardCell", bundle: nil), forCellWithReuseIdentifier: "StockCardCell")
+        }
     
     private func loadTickers() {
         guard let path = Bundle.main.path(forResource: "market", ofType: "json") else { return }
@@ -73,5 +81,30 @@ extension MarketViewController: UITableViewDataSource {
         cell.configure(with: ticker)
         
         return cell
+    }
+}
+
+extension MarketViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tickers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StockCardCell", for: indexPath) as? StockCardCell else {
+            return UICollectionViewCell()
+        }
+        
+        let ticker = tickers[indexPath.item]
+        cell.configure(with: ticker)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 239, height: 136)
     }
 }

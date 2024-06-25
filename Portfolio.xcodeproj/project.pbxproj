@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE02168A2C2AD240000B85B4 /* StockCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0216892C2AD240000B85B4 /* StockCardCell.xib */; };
+		AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0216882C2AD240000B85B4 /* StockCardCell.swift */; };
 		AE3179DB2C219E7800B8FA4E /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3179DA2C219E7800B8FA4E /* StockCell.xib */; };
 		AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3179D92C219E7800B8FA4E /* StockCell.swift */; };
 		AE3179E02C21A1FA00B8FA4E /* InterTight-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0216882C2AD240000B85B4 /* StockCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCardCell.swift; sourceTree = "<group>"; };
+		AE0216892C2AD240000B85B4 /* StockCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCardCell.xib; sourceTree = "<group>"; };
 		AE3179D92C219E7800B8FA4E /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		AE3179DA2C219E7800B8FA4E /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 		AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Bold.ttf"; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0216872C2AD0CB000B85B4 /* StockCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				AE0216882C2AD240000B85B4 /* StockCardCell.swift */,
+				AE0216892C2AD240000B85B4 /* StockCardCell.xib */,
+			);
+			path = StockCardCell;
+			sourceTree = "<group>";
+		};
 		AE3179DD2C21A19A00B8FA4E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */,
+				AE0216872C2AD0CB000B85B4 /* StockCardCell */,
 				AE8722872C20DCCB005B3B72 /* StockCell */,
 				AE8722772C20DBD9005B3B72 /* MarketViewController.swift */,
 			);
@@ -211,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE02168A2C2AD240000B85B4 /* StockCardCell.xib in Resources */,
 				AE87227D2C20DBDA005B3B72 /* Assets.xcassets in Resources */,
 				AE8722802C20DBDA005B3B72 /* Base in Resources */,
 				AE3179DB2C219E7800B8FA4E /* StockCell.xib in Resources */,
@@ -236,6 +251,7 @@
 				AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */,
 				AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */,
 				AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */,
+				AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */,
 				AE4CB1AD2C22F13700A3C5BC /* LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

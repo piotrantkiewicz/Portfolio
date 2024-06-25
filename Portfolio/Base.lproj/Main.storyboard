@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nLq-h5-JLl">
-                                <rect key="frame" x="0.0" y="339" width="393" height="513"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Movers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MK-xV-fjx">
-                                <rect key="frame" x="16" y="299" width="120" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-du-fuf">
                                 <rect key="frame" x="168.66666666666666" y="74" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -53,27 +43,55 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="search"/>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OpF-F9-CmE">
+                                <rect key="frame" x="0.0" y="134" width="393" height="139"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="4zZ-bY-Cdr"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="faR-Yb-3pK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Movers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9w-rP-aeU">
+                                <rect key="frame" x="16" y="305" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lwM-ZY-crk">
+                                <rect key="frame" x="0.0" y="344" width="393" height="508"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ARC-du-fuf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="013-9l-Lex"/>
-                            <constraint firstAttribute="bottom" secondItem="nLq-h5-JLl" secondAttribute="bottom" id="5bT-Ob-SU7"/>
                             <constraint firstItem="ARC-du-fuf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="8M2-9w-iug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OpF-F9-CmE" secondAttribute="trailing" id="CZf-GW-CNN"/>
+                            <constraint firstItem="O9w-rP-aeU" firstAttribute="top" secondItem="OpF-F9-CmE" secondAttribute="bottom" constant="32" id="EGo-c9-C9q"/>
                             <constraint firstItem="Tem-uA-UKc" firstAttribute="top" secondItem="jsW-5B-XPs" secondAttribute="top" id="EVM-ZK-M16"/>
-                            <constraint firstItem="nLq-h5-JLl" firstAttribute="top" secondItem="4MK-xV-fjx" secondAttribute="bottom" constant="18" id="Fpb-Ff-8BW"/>
+                            <constraint firstItem="O9w-rP-aeU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fkq-Tf-mit"/>
+                            <constraint firstItem="lwM-ZY-crk" firstAttribute="top" secondItem="O9w-rP-aeU" secondAttribute="bottom" constant="18" id="JZf-cK-70P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lwM-ZY-crk" secondAttribute="trailing" id="LMd-27-jV5"/>
                             <constraint firstItem="jsW-5B-XPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="VDo-nL-TZB"/>
-                            <constraint firstItem="4MK-xV-fjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vq1-dW-CjS"/>
-                            <constraint firstItem="4MK-xV-fjx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="240" id="kRD-IF-hka"/>
-                            <constraint firstItem="nLq-h5-JLl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mp0-jw-bB4"/>
+                            <constraint firstItem="OpF-F9-CmE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="inn-Hr-BnH"/>
+                            <constraint firstAttribute="bottom" secondItem="lwM-ZY-crk" secondAttribute="bottom" id="j8M-mA-Vu0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tem-uA-UKc" secondAttribute="trailing" constant="12" id="okN-8c-CQ0"/>
-                            <constraint firstItem="nLq-h5-JLl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pf7-ay-xwt"/>
+                            <constraint firstItem="lwM-ZY-crk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p8L-gi-qzm"/>
                             <constraint firstItem="jsW-5B-XPs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tli-9d-XDE"/>
+                            <constraint firstItem="OpF-F9-CmE" firstAttribute="top" secondItem="ARC-du-fuf" secondAttribute="bottom" constant="39" id="u2X-gg-Ye0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="nLq-h5-JLl" id="SlE-cN-dNy"/>
-                        <outlet property="tableViewLbl" destination="4MK-xV-fjx" id="w8b-a9-kfl"/>
+                        <outlet property="collectionView" destination="OpF-F9-CmE" id="ZeN-Oy-6C9"/>
+                        <outlet property="tableView" destination="lwM-ZY-crk" id="xfd-5z-PHW"/>
+                        <outlet property="tableViewLbl" destination="O9w-rP-aeU" id="Gco-ki-dkW"/>
                         <outlet property="titleLbl" destination="ARC-du-fuf" id="mE9-QI-zwn"/>
                     </connections>
                 </viewController>
