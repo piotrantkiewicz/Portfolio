@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-jS-Mba" customClass="LineChartView" customModule="Portfolio" customModuleProvider="target">
-                        <rect key="frame" x="179" y="0.0" width="100" height="40"/>
+                        <rect key="frame" x="163" y="0.0" width="100" height="40"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="3wa-Va-rPO"/>
@@ -63,7 +63,7 @@
                     <constraint firstItem="tfe-aF-iBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4q7-8p-gxx"/>
                     <constraint firstItem="yh0-9C-mYJ" firstAttribute="leading" secondItem="tfe-aF-iBh" secondAttribute="trailing" constant="12" id="FZA-MA-svi"/>
                     <constraint firstAttribute="trailing" secondItem="0qM-f1-KzE" secondAttribute="trailing" constant="16" id="OhN-8z-9op"/>
-                    <constraint firstItem="TR1-jS-Mba" firstAttribute="leading" secondItem="aRh-3T-h6O" secondAttribute="trailing" constant="62" id="P6M-ES-miI"/>
+                    <constraint firstItem="2Wb-Vx-uwi" firstAttribute="leading" secondItem="TR1-jS-Mba" secondAttribute="trailing" constant="50" id="RBq-qx-YUc"/>
                     <constraint firstItem="2Wb-Vx-uwi" firstAttribute="top" secondItem="0qM-f1-KzE" secondAttribute="bottom" constant="4" id="Zmn-SB-k6x"/>
                     <constraint firstItem="aRh-3T-h6O" firstAttribute="top" secondItem="yh0-9C-mYJ" secondAttribute="bottom" constant="4" id="cCB-eU-KNi"/>
                     <constraint firstItem="tfe-aF-iBh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d6B-uz-e2X"/>

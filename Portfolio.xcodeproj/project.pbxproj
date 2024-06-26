@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AE02168A2C2AD240000B85B4 /* StockCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0216892C2AD240000B85B4 /* StockCardCell.xib */; };
 		AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0216882C2AD240000B85B4 /* StockCardCell.swift */; };
+		AE02168E2C2B1CD2000B85B4 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02168D2C2B1CD2000B85B4 /* UIColor+hex.swift */; };
+		AE0216912C2B1FB3000B85B4 /* BuyStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0216902C2B1FB3000B85B4 /* BuyStockViewController.swift */; };
 		AE3179DB2C219E7800B8FA4E /* StockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3179DA2C219E7800B8FA4E /* StockCell.xib */; };
 		AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3179D92C219E7800B8FA4E /* StockCell.swift */; };
 		AE3179E02C21A1FA00B8FA4E /* InterTight-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		AE0216882C2AD240000B85B4 /* StockCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCardCell.swift; sourceTree = "<group>"; };
 		AE0216892C2AD240000B85B4 /* StockCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCardCell.xib; sourceTree = "<group>"; };
+		AE02168D2C2B1CD2000B85B4 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		AE0216902C2B1FB3000B85B4 /* BuyStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyStockViewController.swift; sourceTree = "<group>"; };
 		AE3179D92C219E7800B8FA4E /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		AE3179DA2C219E7800B8FA4E /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 		AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Bold.ttf"; sourceTree = "<group>"; };
@@ -68,6 +72,14 @@
 				AE0216892C2AD240000B85B4 /* StockCardCell.xib */,
 			);
 			path = StockCardCell;
+			sourceTree = "<group>";
+		};
+		AE02168F2C2B1F8D000B85B4 /* BuyStock */ = {
+			isa = PBXGroup;
+			children = (
+				AE0216902C2B1FB3000B85B4 /* BuyStockViewController.swift */,
+			);
+			path = BuyStock;
 			sourceTree = "<group>";
 		};
 		AE3179DD2C21A19A00B8FA4E /* Resources */ = {
@@ -129,6 +141,7 @@
 				AE3179DD2C21A19A00B8FA4E /* Resources */,
 				AE4CB1AE2C2341F100A3C5BC /* Portoflio */,
 				AED1D4382C244469007A3056 /* Market */,
+				AE02168F2C2B1F8D000B85B4 /* BuyStock */,
 				AE8722732C20DBD9005B3B72 /* AppDelegate.swift */,
 				AE8722752C20DBD9005B3B72 /* SceneDelegate.swift */,
 				AE8722792C20DBD9005B3B72 /* Main.storyboard */,
@@ -152,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */,
+				AE02168D2C2B1CD2000B85B4 /* UIColor+hex.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -248,9 +262,11 @@
 				AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */,
 				AE4CB1B02C23421200A3C5BC /* PortoflioViewController.swift in Sources */,
 				AE8722782C20DBD9005B3B72 /* MarketViewController.swift in Sources */,
+				AE0216912C2B1FB3000B85B4 /* BuyStockViewController.swift in Sources */,
 				AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */,
 				AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */,
 				AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */,
+				AE02168E2C2B1CD2000B85B4 /* UIColor+hex.swift in Sources */,
 				AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */,
 				AE4CB1AD2C22F13700A3C5BC /* LineChartView.swift in Sources */,
 			);

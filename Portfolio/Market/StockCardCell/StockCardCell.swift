@@ -19,6 +19,11 @@ class StockCardCell: UICollectionViewCell {
         subtitleLbl.text = ticker.name
         stockValueLbl.text = String(format: "%.2f", ticker.price)
         
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(hex: "#EAEAEA")?.cgColor
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 12
+        
         if let firstChange = ticker.change.first, let lastChange = ticker.change.last {
             let changeValue = lastChange.close - firstChange.close
             stockChangeLbl.text = String(format: "%.2f", changeValue)

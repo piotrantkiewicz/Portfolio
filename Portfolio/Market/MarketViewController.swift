@@ -25,7 +25,8 @@ class MarketViewController: UIViewController {
     @IBOutlet weak var tableViewLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var tickers: [Ticker] = []
+    var indexTickers: [Ticker] = []
+    var stockTickers: [Ticker] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +57,11 @@ class MarketViewController: UIViewController {
         do {
             let data = try Data(contentsOf: url)
             let tickersObject = try JSONDecoder().decode(TickersJson.self, from: data)
-            self.tickers = tickersObject.tickers.filter { $0.type == "stock" }
-        
+            self.indexTickers = tickersObject.tickers.filter { $0.type == "index" }
+            self.stockTickers = tickersObject.tickers.filter { $0.type == "stock" }
+            
             tableView.reloadData()
+            collectionView.reloadData()
         } catch {
             print("Failed to load or parse JSON: \(error)")
         }
@@ -71,13 +74,13 @@ class MarketViewController: UIViewController {
 
 extension MarketViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tickers.count
+        return stockTickers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell") as? StockCell else { return UITableViewCell() }
         
-        let ticker = tickers[indexPath.row]
+        let ticker = stockTickers[indexPath.row]
         cell.configure(with: ticker)
         
         return cell
@@ -86,7 +89,7 @@ extension MarketViewController: UITableViewDataSource {
 
 extension MarketViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tickers.count
+        return indexTickers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,7 +97,7 @@ extension MarketViewController: UICollectionViewDataSource, UICollectionViewDele
             return UICollectionViewCell()
         }
         
-        let ticker = tickers[indexPath.item]
+        let ticker = indexTickers[indexPath.item]
         cell.configure(with: ticker)
         
         return cell

@@ -12,7 +12,7 @@ class LineChartView: UIView {
     var shadowOffset: CGSize = CGSize(width: 2, height: 2)
     var shadowBlurRadius: CGFloat = 3.0
     var shadowColor: UIColor = .gray
-    var lineColor: UIColor = .green
+    var lineColor: UIColor = UIColor(hex: "#42A06D") ?? .green
     var lineWidth: CGFloat = 2.0
     
     override func draw(_ rect: CGRect) {
