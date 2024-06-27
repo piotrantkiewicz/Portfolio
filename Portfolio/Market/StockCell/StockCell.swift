@@ -11,7 +11,6 @@ class StockCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        lineChart.lineColor = .red
         titleLbl.font = UIFont(name: FontName.intertightBold.rawValue, size: 14)
     }
     
@@ -23,6 +22,8 @@ class StockCell: UITableViewCell {
         if let firstChange = ticker.change.first, let lastChange = ticker.change.last {
             let changeValue = lastChange.close - firstChange.close
             stockChangeLbl.text = String(format: "%.2f", changeValue)
+            
+            lineChart.lineColor = changeValue < 0 ? UIColor(hex: "#E20029")! : UIColor(hex: "#16A34A")!
         }
         
         let chartData = ticker.change.map { $0.close }
