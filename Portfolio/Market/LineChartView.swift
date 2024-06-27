@@ -9,10 +9,10 @@ class LineChartView: UIView {
     var horizontalMargin: CGFloat = 10
     var verticalMargin: CGFloat = 10
     //update according to figma
-    var shadowOffset: CGSize = CGSize(width: 2, height: 2)
-    var shadowBlurRadius: CGFloat = 3.0
-    var shadowColor: UIColor = .gray
-    var lineColor: UIColor = UIColor(hex: "#42A06D") ?? .green
+    var shadowOffset: CGSize = CGSize(width: 0, height: 2)
+    var shadowBlurRadius: CGFloat = 2.0
+    var shadowColor: UIColor = UIColor(hex: "#FFFFFF")!
+    var lineColor: UIColor = UIColor(hex: "#42A06D")!
     var lineWidth: CGFloat = 2.0
     
     override func draw(_ rect: CGRect) {

@@ -29,6 +29,7 @@
 		AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */; };
 		AEF7A8D72C2DC8A200C99DAE /* PortfolioStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7A8D52C2DC8A200C99DAE /* PortfolioStockCell.swift */; };
 		AEF7A8D82C2DC8A200C99DAE /* PortfolioStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF7A8D62C2DC8A200C99DAE /* PortfolioStockCell.xib */; };
+		AEF7A8DA2C2E1DE100C99DAE /* UIImage+ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		AEF7A8D52C2DC8A200C99DAE /* PortfolioStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStockCell.swift; sourceTree = "<group>"; };
 		AEF7A8D62C2DC8A200C99DAE /* PortfolioStockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioStockCell.xib; sourceTree = "<group>"; };
+		AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageUtility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */,
 				AE02168D2C2B1CD2000B85B4 /* UIColor+hex.swift */,
+				AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				AE3179E32C21A52100B8FA4E /* FontName.swift in Sources */,
 				AEF7A8D72C2DC8A200C99DAE /* PortfolioStockCell.swift in Sources */,
+				AEF7A8DA2C2E1DE100C99DAE /* UIImage+ImageUtility.swift in Sources */,
 				AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */,
 				AE4CB1B02C23421200A3C5BC /* PortoflioViewController.swift in Sources */,
 				AE8722782C20DBD9005B3B72 /* MarketViewController.swift in Sources */,
