@@ -188,6 +188,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="back"/>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="W6H-4p-jiQ" eventType="touchUpInside" id="njB-Zy-LVE"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytb-LH-asg">
                                 <rect key="frame" x="16" y="134" width="361" height="56"/>
@@ -251,6 +254,9 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmBtnTapped:" destination="W6H-4p-jiQ" eventType="touchUpInside" id="6iR-o8-uPO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a9r-MX-mrm"/>
@@ -277,7 +283,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleLbl" destination="Q32-2U-8y2" id="0rQ-EO-ycO"/>
+                        <outlet property="backgroundView" destination="Ytb-LH-asg" id="JIm-xJ-WFV"/>
+                        <outlet property="confirmBtn" destination="jyB-Ck-RtC" id="6bV-ow-ReR"/>
+                        <outlet property="logoImage" destination="xll-vZ-dfY" id="GHB-X4-BHO"/>
+                        <outlet property="subtitleLbl" destination="0lc-OT-JuA" id="Mi9-QH-y50"/>
+                        <outlet property="textField" destination="93R-aP-RAK" id="8zm-yz-Swy"/>
+                        <outlet property="titleLbl" destination="MOH-xL-A62" id="swd-ES-ev2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dse-7e-WJp" sceneMemberID="firstResponder"/>

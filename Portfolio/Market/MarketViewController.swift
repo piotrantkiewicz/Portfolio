@@ -17,7 +17,6 @@ struct TickersJson: Codable {
     let tickers: [Ticker]
 }
 
- 
 class MarketViewController: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
@@ -40,15 +39,15 @@ class MarketViewController: UIViewController {
     
     private func configureTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "StockCell")
-        tableView.allowsSelection = false
     }
     
     private func configureCollectionView() {
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            collectionView.register(UINib(nibName: "StockCardCell", bundle: nil), forCellWithReuseIdentifier: "StockCardCell")
-        }
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "StockCardCell", bundle: nil), forCellWithReuseIdentifier: "StockCardCell")
+    }
     
     private func loadTickers() {
         guard let path = Bundle.main.path(forResource: "market", ofType: "json") else { return }
@@ -72,7 +71,7 @@ class MarketViewController: UIViewController {
     }
 }
 
-extension MarketViewController: UITableViewDataSource {
+extension MarketViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stockTickers.count
     }
@@ -83,7 +82,24 @@ extension MarketViewController: UITableViewDataSource {
         let ticker = stockTickers[indexPath.row]
         cell.configure(with: ticker)
         
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTicker = stockTickers[indexPath.row]
+        showBuyStockViewController(with: selectedTicker)
+    }
+    
+    private func showBuyStockViewController(with ticker: Ticker) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let buyStockVC = storyboard.instantiateViewController(withIdentifier: "BuyStockViewController") as? BuyStockViewController {
+            buyStockVC.ticker = ticker
+            buyStockVC.modalPresentationStyle = .fullScreen
+            present(buyStockVC, animated: true)
+        }
+    
     }
 }
 

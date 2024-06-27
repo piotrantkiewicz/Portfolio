@@ -11,7 +11,11 @@ class StockCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         titleLbl.font = UIFont(name: FontName.intertightBold.rawValue, size: 14)
+        subtitleLbl.font = UIFont(name: FontName.intertightRegular.rawValue, size: 10)
+        stockValueLbl.font = UIFont(name: FontName.intertightBold.rawValue, size: 14)
+        stockChangeLbl.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 12)
     }
     
     func configure(with ticker: Ticker) {
