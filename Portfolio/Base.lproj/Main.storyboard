@@ -119,9 +119,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AWu-vo-xnx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-CT-ZXA">
                                 <rect key="frame" x="0.0" y="237.33333333333331" width="393" height="614.66666666666674"/>
-                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AWu-vo-xnx">
+                                <rect key="frame" x="16" y="269.33333333333331" width="361" height="582.66666666666674"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvT-Rh-Oi2">
                                 <rect key="frame" x="16" y="756" width="361" height="52"/>
@@ -142,17 +146,21 @@
                         <viewLayoutGuide key="safeArea" id="qlx-KS-fGw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AWu-vo-xnx" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" id="2eg-Os-tNe"/>
+                            <constraint firstItem="AWu-vo-xnx" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" constant="16" id="AHh-7M-9vw"/>
                             <constraint firstAttribute="bottom" secondItem="AWu-vo-xnx" secondAttribute="bottom" id="CbW-TX-U39"/>
+                            <constraint firstItem="zbl-CT-ZXA" firstAttribute="top" secondItem="qMq-3p-Zg5" secondAttribute="bottom" constant="47" id="JTz-TD-Otj"/>
                             <constraint firstItem="qMq-3p-Zg5" firstAttribute="centerX" secondItem="zwb-bM-Cbh" secondAttribute="centerX" id="ODe-zU-7ff"/>
                             <constraint firstItem="CvT-Rh-Oi2" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" constant="16" id="TiK-qu-hh9"/>
+                            <constraint firstAttribute="bottom" secondItem="zbl-CT-ZXA" secondAttribute="bottom" id="Tnr-wD-4jT"/>
                             <constraint firstItem="qlx-KS-fGw" firstAttribute="trailing" secondItem="CvT-Rh-Oi2" secondAttribute="trailing" constant="16" id="XpO-df-IYF"/>
-                            <constraint firstItem="qlx-KS-fGw" firstAttribute="trailing" secondItem="AWu-vo-xnx" secondAttribute="trailing" id="Z5z-jw-Xh8"/>
                             <constraint firstItem="qMq-3p-Zg5" firstAttribute="top" secondItem="sFO-W6-bQb" secondAttribute="bottom" constant="12" id="c2O-a9-2by"/>
+                            <constraint firstItem="AWu-vo-xnx" firstAttribute="trailing" secondItem="qlx-KS-fGw" secondAttribute="trailing" constant="-16" id="dWj-Fm-hz9"/>
+                            <constraint firstItem="zbl-CT-ZXA" firstAttribute="trailing" secondItem="qlx-KS-fGw" secondAttribute="trailing" id="hGe-XB-lTw"/>
                             <constraint firstItem="qlx-KS-fGw" firstAttribute="bottom" secondItem="CvT-Rh-Oi2" secondAttribute="bottom" constant="10" id="l08-Qv-2IM"/>
                             <constraint firstItem="sFO-W6-bQb" firstAttribute="top" secondItem="qlx-KS-fGw" secondAttribute="top" constant="64" id="m4n-7Q-Z5n"/>
                             <constraint firstItem="sFO-W6-bQb" firstAttribute="centerX" secondItem="zwb-bM-Cbh" secondAttribute="centerX" id="poj-n7-1gW"/>
-                            <constraint firstItem="AWu-vo-xnx" firstAttribute="top" secondItem="qMq-3p-Zg5" secondAttribute="bottom" constant="47" id="yNs-iu-4ml"/>
+                            <constraint firstItem="zbl-CT-ZXA" firstAttribute="leading" secondItem="qlx-KS-fGw" secondAttribute="leading" id="rCG-2J-EhA"/>
+                            <constraint firstItem="AWu-vo-xnx" firstAttribute="top" secondItem="qMq-3p-Zg5" secondAttribute="bottom" constant="79" id="yNs-iu-4ml"/>
                         </constraints>
                     </view>
                     <connections>
@@ -160,6 +168,7 @@
                         <outlet property="portfolioLbl" destination="sFO-W6-bQb" id="czR-aa-ftj"/>
                         <outlet property="portolioValueLbl" destination="qMq-3p-Zg5" id="mcX-Bw-BQy"/>
                         <outlet property="tableView" destination="AWu-vo-xnx" id="3Ys-of-GNz"/>
+                        <outlet property="tableViewBackgroundView" destination="zbl-CT-ZXA" id="tGg-r4-wD4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6V-ig-EcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

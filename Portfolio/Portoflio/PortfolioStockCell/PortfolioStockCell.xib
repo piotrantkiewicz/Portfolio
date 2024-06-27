@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PortfolioStockCell" customModule="Portfolio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="166"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="166"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td3-pc-HCc">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="156"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MSFT" translatesAutoresizingMaskIntoConstraints="NO" id="8vf-Pi-Wyd">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L60-oo-eH6"/>
+                                    <constraint firstAttribute="width" constant="40" id="jPz-1A-DWn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MSFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-3m-tqm">
+                                <rect key="frame" x="72" y="23" width="38" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft Corporations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQg-Gq-cau">
+                                <rect key="frame" x="72" y="44" width="112" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.42745098039215684" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhR-Zj-Dob">
+                                <rect key="frame" x="20" y="92" width="81" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.64313725490196072" green="0.67450980392156867" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$7,666.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPS-tf-VNx">
+                                <rect key="frame" x="20" y="115" width="82" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyZ-XE-BXB">
+                                <rect key="frame" x="258" y="92" width="65" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.64313725490196072" green="0.67450980392156867" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,111.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awt-EK-h8m">
+                                <rect key="frame" x="248" y="115" width="75" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.34901960784313724" green="0.33333333333333331" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="awt-EK-h8m" secondAttribute="trailing" constant="20" id="32R-Hx-ASc"/>
+                            <constraint firstItem="SQg-Gq-cau" firstAttribute="leading" secondItem="8vf-Pi-Wyd" secondAttribute="trailing" constant="12" id="Ah4-9h-21Z"/>
+                            <constraint firstItem="XhR-Zj-Dob" firstAttribute="top" secondItem="8vf-Pi-Wyd" secondAttribute="bottom" constant="32" id="EQe-Ph-BRc"/>
+                            <constraint firstItem="8vf-Pi-Wyd" firstAttribute="leading" secondItem="Td3-pc-HCc" secondAttribute="leading" constant="20" id="HBE-BC-gvB"/>
+                            <constraint firstItem="oPS-tf-VNx" firstAttribute="leading" secondItem="Td3-pc-HCc" secondAttribute="leading" constant="20" id="Heh-yv-ppT"/>
+                            <constraint firstItem="awt-EK-h8m" firstAttribute="top" secondItem="WyZ-XE-BXB" secondAttribute="bottom" constant="8" id="RnE-24-bl9"/>
+                            <constraint firstItem="WyZ-XE-BXB" firstAttribute="top" secondItem="Td3-pc-HCc" secondAttribute="top" constant="92" id="SMg-yB-LDQ"/>
+                            <constraint firstItem="oPS-tf-VNx" firstAttribute="top" secondItem="XhR-Zj-Dob" secondAttribute="bottom" constant="8" id="cJu-eF-XKw"/>
+                            <constraint firstItem="XhR-Zj-Dob" firstAttribute="leading" secondItem="Td3-pc-HCc" secondAttribute="leading" constant="20" id="e9C-ZG-zIS"/>
+                            <constraint firstAttribute="trailing" secondItem="WyZ-XE-BXB" secondAttribute="trailing" constant="20" id="hpM-2A-Nux"/>
+                            <constraint firstItem="rvz-3m-tqm" firstAttribute="top" secondItem="Td3-pc-HCc" secondAttribute="top" constant="23" id="isf-9E-XTI"/>
+                            <constraint firstItem="8vf-Pi-Wyd" firstAttribute="top" secondItem="Td3-pc-HCc" secondAttribute="top" constant="20" id="jrN-CP-yzK"/>
+                            <constraint firstItem="SQg-Gq-cau" firstAttribute="top" secondItem="rvz-3m-tqm" secondAttribute="bottom" constant="4" id="lac-2e-bS6"/>
+                            <constraint firstItem="rvz-3m-tqm" firstAttribute="leading" secondItem="8vf-Pi-Wyd" secondAttribute="trailing" constant="12" id="xKZ-Oi-dQY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Td3-pc-HCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2nY-KW-84D"/>
+                    <constraint firstAttribute="trailing" secondItem="Td3-pc-HCc" secondAttribute="trailing" id="Pvv-va-og4"/>
+                    <constraint firstAttribute="bottom" secondItem="Td3-pc-HCc" secondAttribute="bottom" constant="10" id="Wdt-rj-I6M"/>
+                    <constraint firstItem="Td3-pc-HCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lfE-iL-JNb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundView" destination="Td3-pc-HCc" id="PkX-Vt-gBK"/>
+                <outlet property="logoImage" destination="8vf-Pi-Wyd" id="nXK-B2-Rxs"/>
+                <outlet property="portfolioLbl" destination="XhR-Zj-Dob" id="MET-d3-PmM"/>
+                <outlet property="portfolioValueLbl" destination="oPS-tf-VNx" id="4Cf-SL-cUO"/>
+                <outlet property="stockCellBackgroundView" destination="Td3-pc-HCc" id="o9j-Ab-eao"/>
+                <outlet property="stockLbl" destination="WyZ-XE-BXB" id="JcN-i9-VdN"/>
+                <outlet property="stockValueLbl" destination="awt-EK-h8m" id="CSc-oz-jHQ"/>
+                <outlet property="subtitleLbl" destination="SQg-Gq-cau" id="bQ9-Ah-gdU"/>
+                <outlet property="titleLbl" destination="rvz-3m-tqm" id="l8g-ru-BOm"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="MSFT" width="40" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
