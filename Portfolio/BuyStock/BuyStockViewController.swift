@@ -6,7 +6,11 @@ class BuyStockViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var subtitleLbl: UILabel!
+    @IBOutlet weak var headlineLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textFieldDollarSighLbl: UILabel!
+    @IBOutlet weak var stockValueLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     
     var ticker: Ticker?
@@ -14,14 +18,25 @@ class BuyStockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
+        configure()
         
         titleLbl.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 14)
         subtitleLbl.font = UIFont(name: FontName.intertightRegular.rawValue, size: 12)
+        stockValueLbl.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 14)
+        headlineLbl.font = UIFont(name: FontName.intertightBold.rawValue, size: 16)
         subtitleLbl.font = UIFont(name: FontName.intertightRegular.rawValue, size: 12)
+        textField.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 48)
+        textFieldDollarSighLbl.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 20)
+        
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
-    private func configureView() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textField.becomeFirstResponder()
+    }
+    
+    private func configure() {
         guard let ticker = ticker else { return }
         
         backgroundView.setCornerRadius(16)
@@ -33,8 +48,9 @@ class BuyStockViewController: UIViewController {
         titleLbl.text = ticker.symbol
         subtitleLbl.text = ticker.name
         logoImage.image = getImageForSymbol(ticker.symbol)
+        stockValueLbl.text = String(format: "%.2f", ticker.price)
+        textField.text = String(format: "%.2f", ticker.price)
         confirmBtn.setCornerRadius(16)
-        
         
         func getImageForSymbol(_ symbol: String) -> UIImage? {
             if let image = UIImage(named: symbol) {
@@ -65,6 +81,10 @@ class BuyStockViewController: UIViewController {
 
             return image
         }
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        textFieldDollarSighLbl.alpha = textField.text?.isEmpty == false ? 1 : 0
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
