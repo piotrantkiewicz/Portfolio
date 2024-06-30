@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class MarketViewController: UIViewController {
     
@@ -9,6 +10,7 @@ class MarketViewController: UIViewController {
     
     var indexTickers: [Ticker] = []
     var stockTickers: [Ticker] = []
+    private let stocksRepository = StocksRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +35,16 @@ class MarketViewController: UIViewController {
     }
     
     private func loadTickers() {
-        guard let path = Bundle.main.path(forResource: "market", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let tickersObject = try JSONDecoder().decode(TickersJson.self, from: data)
-            self.indexTickers = tickersObject.tickers.filter { $0.type == "index" }
-            self.stockTickers = tickersObject.tickers.filter { $0.type == "stock" }
-            
-            tableView.reloadData()
-            collectionView.reloadData()
-        } catch {
-            print("Failed to load or parse JSON: \(error)")
+        Task {
+            if let tickers = await stocksRepository.load() {
+                self.indexTickers = tickers.filter { $0.type == "index" }
+                self.stockTickers = tickers.filter { $0.type == "stock" }
+                
+                tableView.reloadData()
+                collectionView.reloadData()
+            } else {
+                print("Failed to load tickers from repository")
+            }
         }
     }
     
