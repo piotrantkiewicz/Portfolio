@@ -1,22 +1,5 @@
 import UIKit
 
-struct Ticker: Codable {
-    let symbol: String
-    let price: Double
-    let name: String
-    let type: String
-    let change: [Change]
-}
-
-struct Change: Codable {
-    let date: TimeInterval
-    let close: Double
-}
-
-struct TickersJson: Codable {
-    let tickers: [Ticker]
-}
-
 class MarketViewController: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!

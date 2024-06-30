@@ -15,9 +15,13 @@
 		AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3179D92C219E7800B8FA4E /* StockCell.swift */; };
 		AE3179E02C21A1FA00B8FA4E /* InterTight-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */; };
 		AE3179E32C21A52100B8FA4E /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3179E22C21A52100B8FA4E /* FontName.swift */; };
+		AE45D6A12C319DEA002A1CB0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE45D6A02C319DEA002A1CB0 /* Alamofire */; };
+		AE45D6A32C319F03002A1CB0 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45D6A22C319F03002A1CB0 /* Ticker.swift */; };
+		AE45D6A52C319FA5002A1CB0 /* StocksLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */; };
 		AE4CB1AB2C22F04600A3C5BC /* market.json in Resources */ = {isa = PBXBuildFile; fileRef = AE4CB1AA2C22F04600A3C5BC /* market.json */; };
 		AE4CB1AD2C22F13700A3C5BC /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */; };
 		AE4CB1B02C23421200A3C5BC /* PortoflioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4CB1AF2C23421200A3C5BC /* PortoflioViewController.swift */; };
+		AE726FDD2C2EDA08001DA21C /* StocksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */; };
 		AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8722732C20DBD9005B3B72 /* AppDelegate.swift */; };
 		AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8722752C20DBD9005B3B72 /* SceneDelegate.swift */; };
 		AE8722782C20DBD9005B3B72 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8722772C20DBD9005B3B72 /* MarketViewController.swift */; };
@@ -29,7 +33,7 @@
 		AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */; };
 		AEF7A8D72C2DC8A200C99DAE /* PortfolioStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7A8D52C2DC8A200C99DAE /* PortfolioStockCell.swift */; };
 		AEF7A8D82C2DC8A200C99DAE /* PortfolioStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF7A8D62C2DC8A200C99DAE /* PortfolioStockCell.xib */; };
-		AEF7A8DA2C2E1DE100C99DAE /* UIImage+ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */; };
+		AEF7A8DA2C2E1DE100C99DAE /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7A8D92C2E1DE100C99DAE /* ImageUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +45,12 @@
 		AE3179DA2C219E7800B8FA4E /* StockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockCell.xib; sourceTree = "<group>"; };
 		AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Bold.ttf"; sourceTree = "<group>"; };
 		AE3179E22C21A52100B8FA4E /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
+		AE45D6A22C319F03002A1CB0 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLoader.swift; sourceTree = "<group>"; };
 		AE4CB1AA2C22F04600A3C5BC /* market.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market.json; sourceTree = "<group>"; };
 		AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		AE4CB1AF2C23421200A3C5BC /* PortoflioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortoflioViewController.swift; sourceTree = "<group>"; };
+		AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepository.swift; sourceTree = "<group>"; };
 		AE8722702C20DBD9005B3B72 /* Portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8722732C20DBD9005B3B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8722752C20DBD9005B3B72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +64,7 @@
 		AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
 		AEF7A8D52C2DC8A200C99DAE /* PortfolioStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStockCell.swift; sourceTree = "<group>"; };
 		AEF7A8D62C2DC8A200C99DAE /* PortfolioStockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioStockCell.xib; sourceTree = "<group>"; };
-		AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageUtility.swift"; sourceTree = "<group>"; };
+		AEF7A8D92C2E1DE100C99DAE /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE45D6A12C319DEA002A1CB0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +132,15 @@
 			path = Portoflio;
 			sourceTree = "<group>";
 		};
+		AE726FDB2C2ED9EF001DA21C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */,
+				AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		AE8722672C20DBD9005B3B72 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,7 @@
 			children = (
 				AED1D4352C24425C007A3056 /* Util */,
 				AE3179E12C21A4F600B8FA4E /* Design */,
+				AE726FDB2C2ED9EF001DA21C /* Networking */,
 				AE3179DD2C21A19A00B8FA4E /* Resources */,
 				AE4CB1AE2C2341F100A3C5BC /* Portoflio */,
 				AED1D4382C244469007A3056 /* Market */,
@@ -173,7 +191,7 @@
 			children = (
 				AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */,
 				AE02168D2C2B1CD2000B85B4 /* UIColor+hex.swift */,
-				AEF7A8D92C2E1DE100C99DAE /* UIImage+ImageUtility.swift */,
+				AEF7A8D92C2E1DE100C99DAE /* ImageUtility.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -181,6 +199,7 @@
 		AED1D4382C244469007A3056 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				AE45D6A22C319F03002A1CB0 /* Ticker.swift */,
 				AE8722772C20DBD9005B3B72 /* MarketViewController.swift */,
 				AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */,
 				AE0216872C2AD0CB000B85B4 /* StockCardCell */,
@@ -214,6 +233,9 @@
 			dependencies = (
 			);
 			name = Portfolio;
+			packageProductDependencies = (
+				AE45D6A02C319DEA002A1CB0 /* Alamofire */,
+			);
 			productName = Portfolio;
 			productReference = AE8722702C20DBD9005B3B72 /* Portfolio.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +264,9 @@
 				Base,
 			);
 			mainGroup = AE8722672C20DBD9005B3B72;
+			packageReferences = (
+				AE45D69F2C319DEA002A1CB0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AE8722712C20DBD9005B3B72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,16 +303,19 @@
 			files = (
 				AE3179E32C21A52100B8FA4E /* FontName.swift in Sources */,
 				AEF7A8D72C2DC8A200C99DAE /* PortfolioStockCell.swift in Sources */,
-				AEF7A8DA2C2E1DE100C99DAE /* UIImage+ImageUtility.swift in Sources */,
+				AEF7A8DA2C2E1DE100C99DAE /* ImageUtility.swift in Sources */,
 				AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */,
 				AE4CB1B02C23421200A3C5BC /* PortoflioViewController.swift in Sources */,
 				AE8722782C20DBD9005B3B72 /* MarketViewController.swift in Sources */,
 				AE0216912C2B1FB3000B85B4 /* BuyStockViewController.swift in Sources */,
+				AE45D6A32C319F03002A1CB0 /* Ticker.swift in Sources */,
 				AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */,
 				AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */,
 				AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */,
+				AE45D6A52C319FA5002A1CB0 /* StocksLoader.swift in Sources */,
 				AE02168E2C2B1CD2000B85B4 /* UIColor+hex.swift in Sources */,
 				AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */,
+				AE726FDD2C2EDA08001DA21C /* StocksRepository.swift in Sources */,
 				AE4CB1AD2C22F13700A3C5BC /* LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +539,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE45D69F2C319DEA002A1CB0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE45D6A02C319DEA002A1CB0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE45D69F2C319DEA002A1CB0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE8722682C20DBD9005B3B72 /* Project object */;
 }
