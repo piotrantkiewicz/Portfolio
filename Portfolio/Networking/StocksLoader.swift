@@ -9,10 +9,10 @@ class StocksLoader: StocksLoading {
         guard
             let path = Bundle.main.path(forResource: "tickers", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
-            let jobs = try? JSONDecoder().decode([Ticker].self, from: data)
+            let tickers = try? JSONDecoder().decode([Ticker].self, from: data)
         else { return nil }
         
-        return jobs
+        return tickers
     }
 }
 
