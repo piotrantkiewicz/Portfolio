@@ -5,7 +5,6 @@ struct DataBasePOSTResponse: Codable {
     let name: String
 }
 
-
 class StocksRepository {
     
     private let baseURL = "https://portfolio-4a6f3-default-rtdb.europe-west1.firebasedatabase.app"
@@ -21,14 +20,16 @@ class StocksRepository {
         }
     }
     
-    
-    // write func for load bought tickers
-    // write func for load sold tickers
+    // Write functions for load bought tickers and load sold tickers here
     
     func addStock(_ ticker: Ticker) async throws -> String {
-        let url = URL(string: "\(baseURL)/stocks.json")
+        guard let encodedSymbol = ticker.symbol.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
+            throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid stock symbol"])
+        }
+        
+        let url = URL(string: "\(baseURL)/stocks/\(encodedSymbol).json")
         var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
+        request.httpMethod = "PUT" // Use PUT to ensure the ID is the ticker symbol
         request.httpBody = try JSONEncoder().encode(ticker)
         
         let (data, _) = try await URLSession.shared.data(for: request)
