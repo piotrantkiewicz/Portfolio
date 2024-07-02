@@ -36,7 +36,7 @@ class MarketViewController: UIViewController {
     
     private func loadTickers() {
         Task {
-            if let tickers = await stocksRepository.load() {
+            if let tickers = await stocksRepository.loadTickers() {
                 self.indexTickers = tickers.filter { $0.type == "index" }
                 self.stockTickers = tickers.filter { $0.type == "stock" }
                 

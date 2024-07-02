@@ -20,7 +20,3 @@ struct Change: Codable {
     let date: TimeInterval
     let close: Double
 }
-
-struct TickersJson: Codable {
-    let tickers: [Ticker]
-}

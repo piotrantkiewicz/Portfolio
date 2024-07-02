@@ -17,7 +17,6 @@
 		AE3179E32C21A52100B8FA4E /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3179E22C21A52100B8FA4E /* FontName.swift */; };
 		AE45D6A12C319DEA002A1CB0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE45D6A02C319DEA002A1CB0 /* Alamofire */; };
 		AE45D6A32C319F03002A1CB0 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45D6A22C319F03002A1CB0 /* Ticker.swift */; };
-		AE45D6A52C319FA5002A1CB0 /* StocksLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */; };
 		AE4CB1AD2C22F13700A3C5BC /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */; };
 		AE4CB1B02C23421200A3C5BC /* PortoflioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4CB1AF2C23421200A3C5BC /* PortoflioViewController.swift */; };
 		AE726FDD2C2EDA08001DA21C /* StocksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */; };
@@ -45,7 +44,6 @@
 		AE3179DF2C21A1FA00B8FA4E /* InterTight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Bold.ttf"; sourceTree = "<group>"; };
 		AE3179E22C21A52100B8FA4E /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		AE45D6A22C319F03002A1CB0 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
-		AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksLoader.swift; sourceTree = "<group>"; };
 		AE4CB1AC2C22F13700A3C5BC /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		AE4CB1AF2C23421200A3C5BC /* PortoflioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortoflioViewController.swift; sourceTree = "<group>"; };
 		AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepository.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				AE726FDC2C2EDA08001DA21C /* StocksRepository.swift */,
-				AE45D6A42C319FA5002A1CB0 /* StocksLoader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -308,7 +305,6 @@
 				AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */,
 				AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */,
 				AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */,
-				AE45D6A52C319FA5002A1CB0 /* StocksLoader.swift in Sources */,
 				AE02168E2C2B1CD2000B85B4 /* UIColor+hex.swift in Sources */,
 				AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */,
 				AE726FDD2C2EDA08001DA21C /* StocksRepository.swift in Sources */,

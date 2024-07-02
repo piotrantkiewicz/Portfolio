@@ -15,6 +15,8 @@ class BuyStockViewController: UIViewController {
     
     var ticker: Ticker?
     
+    private let stocksRepository = StocksRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,5 +94,11 @@ class BuyStockViewController: UIViewController {
     }
     
     @IBAction func confirmBtnTapped(_ sender: Any) {
+        
+        guard let ticker = ticker else { return }
+        
+        Task {
+            try await stocksRepository.addStock(ticker)
+        }
     }
 }
