@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
-        <!--Portoflio View Controller-->
+        <!--Portfolio View Controller-->
         <scene sceneID="n9W-Se-ImO">
             <objects>
-                <viewController id="wEj-QI-FZq" customClass="PortoflioViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wEj-QI-FZq" customClass="PortfolioViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwb-bM-Cbh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="addNewStockBtn" destination="CvT-Rh-Oi2" id="GsS-zz-hVV"/>
                         <outlet property="portfolioLbl" destination="sFO-W6-bQb" id="czR-aa-ftj"/>
+                        <outlet property="portfolioValueLbl" destination="qMq-3p-Zg5" id="RYV-gu-a77"/>
                         <outlet property="portolioValueLbl" destination="qMq-3p-Zg5" id="mcX-Bw-BQy"/>
                         <outlet property="tableView" destination="AWu-vo-xnx" id="3Ys-of-GNz"/>
                         <outlet property="tableViewBackgroundView" destination="zbl-CT-ZXA" id="tGg-r4-wD4"/>

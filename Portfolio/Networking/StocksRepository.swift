@@ -20,6 +20,32 @@ class StocksRepository {
         }
     }
     
+    func loadStocks() async -> [Ticker]? {
+        let url = "\(baseURL)/stocks.json"
+        let response = await AF.request(url, interceptor: .retryPolicy)
+            .serializingString()
+            .response
+        
+        guard let responseData = response.value else {
+            print("Failed to get response data")
+            return nil
+        }
+        
+        print("Raw JSON response for tickers: \(responseData)")
+
+        let decoder = JSONDecoder()
+        do {
+            let tickerDict = try decoder.decode([String: Ticker].self, from: Data(responseData.utf8))
+            let tickers = tickerDict.map { (key, value) in
+                Ticker(symbol: key, price: value.price, name: value.name, type: value.type, change: [])
+            }
+            return tickers
+        } catch {
+            print("Failed to decode tickers: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     // Write functions for load bought tickers and load sold tickers here
     
     func addStock(_ ticker: Ticker) async throws -> String {
