@@ -33,6 +33,7 @@ class PortfolioViewController: UIViewController {
     private func configureTableView() {
         tableView.rowHeight = 156
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "PortfolioStockCell", bundle: nil), forCellReuseIdentifier: "PortfolioStockCell")
     }
     
@@ -82,5 +83,18 @@ extension PortfolioViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+extension PortfolioViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ticker = tickers[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let sellStockVC = storyboard.instantiateViewController(withIdentifier: "SellStockViewController") as? SellStockViewController {
+            sellStockVC.ticker = ticker
+            sellStockVC.modalPresentationStyle = .fullScreen
+            present(sellStockVC, animated: true, completion: nil)
+        }
     }
 }

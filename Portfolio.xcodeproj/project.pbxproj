@@ -26,6 +26,7 @@
 		AE87227B2C20DBD9005B3B72 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AE87227A2C20DBD9005B3B72 /* Base */; };
 		AE87227D2C20DBDA005B3B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE87227C2C20DBDA005B3B72 /* Assets.xcassets */; };
 		AE8722802C20DBDA005B3B72 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AE87227F2C20DBDA005B3B72 /* Base */; };
+		AE9659552C35680600ADEE2B /* SellStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9659542C35680600ADEE2B /* SellStockViewController.swift */; };
 		AED1D4322C244025007A3056 /* InterTight-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AED1D4312C244025007A3056 /* InterTight-SemiBold.ttf */; };
 		AED1D4342C244041007A3056 /* InterTight-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AED1D4332C244041007A3056 /* InterTight-Regular.ttf */; };
 		AED1D4372C244264007A3056 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */; };
@@ -55,6 +56,7 @@
 		AE87227C2C20DBDA005B3B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE87227F2C20DBDA005B3B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE8722812C20DBDA005B3B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE9659542C35680600ADEE2B /* SellStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockViewController.swift; sourceTree = "<group>"; };
 		AED1D4312C244025007A3056 /* InterTight-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-SemiBold.ttf"; sourceTree = "<group>"; };
 		AED1D4332C244041007A3056 /* InterTight-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Regular.ttf"; sourceTree = "<group>"; };
 		AED1D4362C244264007A3056 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				AE4CB1AE2C2341F100A3C5BC /* Portoflio */,
 				AED1D4382C244469007A3056 /* Market */,
 				AE02168F2C2B1F8D000B85B4 /* BuyStock */,
+				AE9659532C35677E00ADEE2B /* SellStock */,
 				AE8722732C20DBD9005B3B72 /* AppDelegate.swift */,
 				AE8722752C20DBD9005B3B72 /* SceneDelegate.swift */,
 				AE8722792C20DBD9005B3B72 /* Main.storyboard */,
@@ -178,6 +181,14 @@
 				AE3179DA2C219E7800B8FA4E /* StockCell.xib */,
 			);
 			path = StockCell;
+			sourceTree = "<group>";
+		};
+		AE9659532C35677E00ADEE2B /* SellStock */ = {
+			isa = PBXGroup;
+			children = (
+				AE9659542C35680600ADEE2B /* SellStockViewController.swift */,
+			);
+			path = SellStock;
 			sourceTree = "<group>";
 		};
 		AED1D4352C24425C007A3056 /* Util */ = {
@@ -305,6 +316,7 @@
 				AE8722742C20DBD9005B3B72 /* AppDelegate.swift in Sources */,
 				AE3179DC2C219E7800B8FA4E /* StockCell.swift in Sources */,
 				AE8722762C20DBD9005B3B72 /* SceneDelegate.swift in Sources */,
+				AE9659552C35680600ADEE2B /* SellStockViewController.swift in Sources */,
 				AE02168E2C2B1CD2000B85B4 /* UIColor+hex.swift in Sources */,
 				AE02168B2C2AD240000B85B4 /* StockCardCell.swift in Sources */,
 				AE726FDD2C2EDA08001DA21C /* StocksRepository.swift in Sources */,
