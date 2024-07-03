@@ -1,10 +1,6 @@
 import Foundation
 import Alamofire
 
-struct DataBasePOSTResponse: Codable {
-    let name: String
-}
-
 class StocksRepository {
     
     private let baseURL = "https://portfolio-4a6f3-default-rtdb.europe-west1.firebasedatabase.app"
@@ -55,8 +51,32 @@ class StocksRepository {
         request.httpBody = try JSONEncoder().encode(ticker)
         
         let (data, _) = try await URLSession.shared.data(for: request)
-        let decoded = try JSONDecoder().decode(DataBasePOSTResponse.self, from: data)
+        let decoded = try JSONDecoder().decode(Ticker.self, from: data)
         
         return decoded.name
+    }
+    
+    func updateStock(_ ticker: Ticker) async throws {
+        guard let encodedSymbol = ticker.symbol.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
+            throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid stock symbol"])
+        }
+        
+        let url = URL(string: "\(baseURL)/stocks/\(encodedSymbol).json")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.httpBody = try JSONEncoder().encode(ticker)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        if let httpResponse = response as? HTTPURLResponse {
+            print("HTTP Response Status Code: \(httpResponse.statusCode)")
+        }
+        
+        let responseData = String(data: data, encoding: .utf8) ?? "No response data"
+        print("Response data: \(responseData)")
+        
+        let decoded = try JSONDecoder().decode(Ticker.self, from: data)
+        
+        print("Updated stock: \(decoded)")
     }
 }

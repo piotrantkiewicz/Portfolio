@@ -28,6 +28,7 @@ class PortfolioViewController: UIViewController {
         loadStocks()
         
         NotificationCenter.default.addObserver(self, selector: #selector(stockAdded), name: .stockAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stockSold), name: .stockSold, object: nil)
     }
     
     private func configureTableView() {
@@ -50,6 +51,10 @@ class PortfolioViewController: UIViewController {
     }
     
     @objc private func stockAdded() {
+        loadStocks()
+    }
+    
+    @objc private func stockSold() {
         loadStocks()
     }
     

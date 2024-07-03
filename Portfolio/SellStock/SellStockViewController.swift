@@ -63,12 +63,15 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text, let price = Double(text) else {
+        guard let text = textField.text, let amountToSubtract = Double(text) else {
             textField.text = String(format: "%.2f", ticker?.price ?? 0.0)
             return
         }
-        
-        ticker?.price = price
+
+        if var ticker = ticker {
+            ticker.price -= amountToSubtract
+            self.ticker = ticker
+        }
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -78,19 +81,24 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmBtnTapped(_ sender: Any) {
         guard var ticker = ticker else { return }
         
-        if let text = textField.text, let price = Double(text) {
-            ticker.price = price
+        if let text = textField.text, let amountToSubtract = Double(text) {
+            ticker.price -= amountToSubtract
         }
         
         Task {
-            try await stocksRepository.addStock(ticker)
-            NotificationCenter.default.post(name: .stockAdded, object: nil)
-            
-            let portfolioVC = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "PortfolioViewController") as! PortfolioViewController
-            portfolioVC.modalPresentationStyle = .fullScreen
-            
-            present(portfolioVC, animated: true)
+            do {
+                try await stocksRepository.updateStock(ticker)
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .stockSold, object: nil)
+                    self.dismiss(animated: true)
+                }
+            } catch {
+                print("Failed to update stock: \(error)")
+            }
         }
     }
+}
+
+extension Notification.Name {
+    static let stockSold = Notification.Name("stockSold")
 }

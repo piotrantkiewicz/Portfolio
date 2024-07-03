@@ -5,7 +5,7 @@ struct Ticker: Codable {
     var price: Double
     let name: String
     let type: String
-    let change: [Change]
+    let change: [Change]?
     
     init(symbol: String, price: Double, name: String, type: String, change: [Change]) {
         self.symbol = symbol

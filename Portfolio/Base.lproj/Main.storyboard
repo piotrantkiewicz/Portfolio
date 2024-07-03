@@ -204,7 +204,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ytb-LH-asg">
                                 <rect key="frame" x="16" y="134" width="361" height="56"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AAPL" translatesAutoresizingMaskIntoConstraints="NO" id="xll-vZ-dfY">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NFLX" translatesAutoresizingMaskIntoConstraints="NO" id="xll-vZ-dfY">
                                         <rect key="frame" x="12" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="0ID-42-s4S"/>
@@ -354,7 +354,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-xt-6Od">
                                 <rect key="frame" x="16" y="134" width="361" height="56"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AAPL" translatesAutoresizingMaskIntoConstraints="NO" id="uum-Lk-cog">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NFLX" translatesAutoresizingMaskIntoConstraints="NO" id="uum-Lk-cog">
                                         <rect key="frame" x="12" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5fL-iE-eyM"/>
@@ -477,7 +477,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AAPL" width="40" height="40"/>
+        <image name="NFLX" width="40" height="40"/>
         <image name="back" width="40" height="40"/>
         <image name="search" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">

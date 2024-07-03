@@ -28,7 +28,7 @@ class StockCardCell: UICollectionViewCell {
         self.clipsToBounds = true
         self.layer.cornerRadius = 12
         
-        if let firstChange = ticker.change.first, let lastChange = ticker.change.last {
+        if let firstChange = ticker.change?.first, let lastChange = ticker.change?.last {
             let changeValue = lastChange.close - firstChange.close
             stockChangeLbl.text = String(format: "%.2f", changeValue)
             
@@ -37,8 +37,8 @@ class StockCardCell: UICollectionViewCell {
             stockChangeLbl.textColor = changeValue < 0 ? UIColor(hex: "#E20029")! : UIColor(hex: "#16A34A")!
         }
         
-        let chartData = ticker.change.map { $0.close }
-        lineChart.data = chartData
+        let chartData = ticker.change?.map { $0.close }
+        lineChart.data = chartData ?? []
         
         logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
     }
