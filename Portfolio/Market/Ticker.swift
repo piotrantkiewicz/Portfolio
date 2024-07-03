@@ -2,7 +2,7 @@ import UIKit
 
 struct Ticker: Codable {
     let symbol: String
-    let price: Double
+    var price: Double
     let name: String
     let type: String
     let change: [Change]

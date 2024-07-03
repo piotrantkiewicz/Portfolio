@@ -1,6 +1,6 @@
 import UIKit
 
-class BuyStockViewController: UIViewController {
+class BuyStockViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var logoImage: UIImageView!
@@ -31,6 +31,9 @@ class BuyStockViewController: UIViewController {
         textFieldDollarSighLbl.font = UIFont(name: FontName.intertightSemiBold.rawValue, size: 20)
         
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        textField.delegate = self
+        
+        textField.keyboardType = .decimalPad
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,44 +52,23 @@ class BuyStockViewController: UIViewController {
         
         titleLbl.text = ticker.symbol
         subtitleLbl.text = ticker.name
-        logoImage.image = getImageForSymbol(ticker.symbol)
+        logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
         stockValueLbl.text = String(format: "%.2f", ticker.price)
         textField.text = String(format: "%.2f", ticker.price)
         confirmBtn.setCornerRadius(16)
-        
-        func getImageForSymbol(_ symbol: String) -> UIImage? {
-            if let image = UIImage(named: symbol) {
-                return image
-            } else {
-                return generateImageWithLetter(symbol.first)
-            }
-        }
-
-        func generateImageWithLetter(_ firstLetter: Character?) -> UIImage? {
-            guard let firstLetter = firstLetter else { return nil }
-
-            let logo = UILabel()
-            logo.frame.size = CGSize(width: 32, height: 32)
-            logo.text = String(firstLetter)
-            logo.textAlignment = .center
-            logo.backgroundColor = UIColor(hex: "#F5F7F9")!
-            logo.textColor = UIColor(hex: "#1A202C")!
-            logo.font = UIFont(name: FontName.intertightBold.rawValue, size: 10)
-            logo.setCornerRadius(20)
-
-            UIGraphicsBeginImageContext(logo.frame.size)
-            if let context = UIGraphicsGetCurrentContext() {
-                logo.layer.render(in: context)
-            }
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-
-            return image
-        }
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         textFieldDollarSighLbl.alpha = textField.text?.isEmpty == false ? 1 : 0
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text, let price = Double(text) else {
+            textField.text = String(format: "%.2f", ticker?.price ?? 0.0)
+            return
+        }
+        
+        ticker?.price = price
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -94,8 +76,11 @@ class BuyStockViewController: UIViewController {
     }
     
     @IBAction func confirmBtnTapped(_ sender: Any) {
+        guard var ticker = ticker else { return }
         
-        guard let ticker = ticker else { return }
+        if let text = textField.text, let price = Double(text) {
+            ticker.price = price
+        }
         
         Task {
             try await stocksRepository.addStock(ticker)
