@@ -39,10 +39,16 @@ class PortfolioViewController: UIViewController {
             if let loadedStocks = await stocksRepository.loadStocks() {
                 self.tickers = loadedStocks.sorted(by: { $0.symbol < $1.symbol })
                 tableView.reloadData()
+                updatePortfolioValue()
             } else {
                 print("Failed to load stocks from repository")
             }
         }
+    }
+    
+    private func updatePortfolioValue() {
+        let totalValue = tickers.reduce(0) { $0 + $1.price }
+        portfolioValueLbl.text = String(format: "%.2f", totalValue)
     }
     
     @IBAction func addNewStockBtnTapped(_ sender: Any) {
