@@ -84,6 +84,17 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
         
         Task {
             try await stocksRepository.addStock(ticker)
+            NotificationCenter.default.post(name: .stockAdded, object: nil)
+            
+            let portfolioVC = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "PortfolioViewController") as! PortfolioViewController
+            portfolioVC.modalPresentationStyle = .fullScreen
+            
+            present(portfolioVC, animated: true)
         }
     }
+}
+
+extension Notification.Name {
+    static let stockAdded = Notification.Name("stockAdded")
 }

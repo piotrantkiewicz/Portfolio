@@ -26,6 +26,8 @@ class PortfolioViewController: UIViewController {
         
         configureTableView()
         loadStocks()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(stockAdded), name: .stockAdded, object: nil)
     }
     
     private func configureTableView() {
@@ -44,6 +46,10 @@ class PortfolioViewController: UIViewController {
                 print("Failed to load stocks from repository")
             }
         }
+    }
+    
+    @objc private func stockAdded() {
+        loadStocks()
     }
     
     private func updatePortfolioValue() {
