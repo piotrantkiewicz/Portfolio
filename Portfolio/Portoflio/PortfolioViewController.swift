@@ -37,7 +37,7 @@ class PortfolioViewController: UIViewController {
     private func loadStocks() {
         Task {
             if let loadedStocks = await stocksRepository.loadStocks() {
-                self.tickers = loadedStocks
+                self.tickers = loadedStocks.sorted(by: { $0.symbol < $1.symbol })
                 tableView.reloadData()
             } else {
                 print("Failed to load stocks from repository")

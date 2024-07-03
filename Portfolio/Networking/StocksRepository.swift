@@ -30,8 +30,6 @@ class StocksRepository {
             print("Failed to get response data")
             return nil
         }
-        
-        print("Raw JSON response for tickers: \(responseData)")
 
         let decoder = JSONDecoder()
         do {
@@ -46,8 +44,6 @@ class StocksRepository {
         }
     }
     
-    // Write functions for load bought tickers and load sold tickers here
-    
     func addStock(_ ticker: Ticker) async throws -> String {
         guard let encodedSymbol = ticker.symbol.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
             throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid stock symbol"])
@@ -55,7 +51,7 @@ class StocksRepository {
         
         let url = URL(string: "\(baseURL)/stocks/\(encodedSymbol).json")
         var request = URLRequest(url: url!)
-        request.httpMethod = "PUT" // Use PUT to ensure the ID is the ticker symbol
+        request.httpMethod = "PUT"
         request.httpBody = try JSONEncoder().encode(ticker)
         
         let (data, _) = try await URLSession.shared.data(for: request)
