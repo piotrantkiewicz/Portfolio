@@ -26,6 +26,7 @@ class PortfolioStockCell: UITableViewCell {
     func configure(with ticker: Ticker) {
         titleLbl.text = ticker.symbol
         subtitleLbl.text = ticker.name
+        portfolioValueLbl.text = String(format: "%.2f", ticker.totalPrice!)
         stockValueLbl.text = String(format: "%.2f", ticker.price)
         
         stockCellBackgroundView.clipsToBounds = true

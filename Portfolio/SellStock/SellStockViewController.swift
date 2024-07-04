@@ -53,8 +53,8 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         titleLbl.text = ticker.symbol
         subtitleLbl.text = ticker.name
         logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
-        stockValueLbl.text = String(format: "%.2f", ticker.price)
-        textField.text = String(format: "%.2f", ticker.price)
+        stockValueLbl.text = String(format: "%.2f", ticker.totalPrice ?? 0.0)
+        textField.text = String(format: "%.2f", ticker.totalPrice ?? 0.0)
         confirmBtn.setCornerRadius(16)
     }
     
@@ -64,12 +64,12 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text, let amountToSubtract = Double(text) else {
-            textField.text = String(format: "%.2f", ticker?.price ?? 0.0)
+            textField.text = String(format: "%.2f", ticker?.totalPrice ?? 0.0)
             return
         }
 
         if var ticker = ticker {
-            ticker.price -= amountToSubtract
+            ticker.totalPrice = (ticker.totalPrice ?? 0.0) - amountToSubtract
             self.ticker = ticker
         }
     }
@@ -82,12 +82,12 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         guard var ticker = ticker else { return }
         
         if let text = textField.text, let amountToSubtract = Double(text) {
-            ticker.price -= amountToSubtract
+            ticker.totalPrice = (ticker.totalPrice ?? 0.0) - amountToSubtract
         }
         
         Task {
             do {
-                if ticker.price <= 0 {
+                if (ticker.totalPrice ?? 0.0) <= 0 {
                     try await stocksRepository.deleteStock(ticker)
                 } else {
                     try await stocksRepository.updateStock(ticker)

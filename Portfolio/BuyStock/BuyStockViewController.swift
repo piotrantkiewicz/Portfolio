@@ -68,7 +68,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        ticker?.price = price
+        ticker?.totalPrice = price
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -79,7 +79,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
         guard var ticker = ticker else { return }
         
         if let text = textField.text, let price = Double(text) {
-            ticker.price = price
+            ticker.totalPrice = price
         }
         
         Task {

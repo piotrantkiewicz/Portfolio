@@ -27,11 +27,15 @@ class StocksRepository {
             return nil
         }
 
+        if responseData == "null" || responseData.isEmpty {
+            return []
+        }
+
         let decoder = JSONDecoder()
         do {
             let tickerDict = try decoder.decode([String: Ticker].self, from: Data(responseData.utf8))
             let tickers = tickerDict.map { (key, value) in
-                Ticker(symbol: key, price: value.price, name: value.name, type: value.type, change: [])
+                Ticker(symbol: key, price: value.price, totalPrice: value.totalPrice!, name: value.name, type: value.type, change: value.change!)
             }
             return tickers
         } catch {
@@ -66,9 +70,14 @@ class StocksRepository {
         request.httpMethod = "PATCH"
         request.httpBody = try JSONEncoder().encode(ticker)
         
-        let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
         
-        _ = String(data: data, encoding: .utf8) ?? "No response data"
+        if let httpResponse = response as? HTTPURLResponse {
+            print("HTTP Response Status Code: \(httpResponse.statusCode)")
+        }
+        
+        let responseData = String(data: data, encoding: .utf8) ?? "No response data"
+        print("Response data: \(responseData)")
         
         let decoded = try JSONDecoder().decode(Ticker.self, from: data)
         
@@ -85,9 +94,6 @@ class StocksRepository {
         
         request.httpMethod = "DELETE"
         
-        let _ = try await URLSession.shared.data(for: request)
-        
-        print("Successfully deleted list with symbol \(encodedSymbol)")
+        let (data, response) = try await URLSession.shared.data(for: request)
     }
-    
 }

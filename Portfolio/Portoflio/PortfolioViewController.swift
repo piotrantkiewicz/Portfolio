@@ -59,7 +59,7 @@ class PortfolioViewController: UIViewController {
     }
     
     private func updatePortfolioValue() {
-        let totalValue = tickers.reduce(0) { $0 + $1.price }
+        let totalValue = tickers.reduce(0) { $0 + ($1.totalPrice ?? 0.0) }
         portfolioValueLbl.text = String(format: "%.2f", totalValue)
     }
     
