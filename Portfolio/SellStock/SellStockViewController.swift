@@ -40,7 +40,8 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         
         guard let totalPrice = ticker?.totalPrice else { return }
         
-        let title = "Sell all shares (\(totalPrice))"
+        let roundedTotalPrice = String(format: "%.2f", totalPrice)
+        let title = "Sell all shares (\(roundedTotalPrice))"
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: FontName.intertightSemiBold.rawValue, size: 14)!
         ]
@@ -75,6 +76,7 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         subtitleLbl.text = ticker.name
         logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
         stockValueLbl.text = String(format: "%.2f", ticker.totalPrice ?? 0.0)
+        textField.text = String(format: "%.2f", ticker.price)
         confirmBtn.setCornerRadius(16)
     }
     

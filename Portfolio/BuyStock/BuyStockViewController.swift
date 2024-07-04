@@ -64,6 +64,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
         subtitleLbl.text = ticker.name
         logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
         stockValueLbl.text = String(format: "%.2f", ticker.price)
+        textField.text = String(format: "%.2f", ticker.price)
         confirmBtn.setCornerRadius(16)
     }
     

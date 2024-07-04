@@ -70,18 +70,11 @@ class StocksRepository {
         request.httpMethod = "PATCH"
         request.httpBody = try JSONEncoder().encode(ticker)
         
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, _) = try await URLSession.shared.data(for: request)
         
-        if let httpResponse = response as? HTTPURLResponse {
-            print("HTTP Response Status Code: \(httpResponse.statusCode)")
-        }
+        _ = String(data: data, encoding: .utf8) ?? "No response data"
         
-        let responseData = String(data: data, encoding: .utf8) ?? "No response data"
-        print("Response data: \(responseData)")
-        
-        let decoded = try JSONDecoder().decode(Ticker.self, from: data)
-        
-        print("Updated stock: \(decoded)")
+        _ = try JSONDecoder().decode(Ticker.self, from: data)
     }
     
     func deleteStock(_ ticker: Ticker) async throws {
