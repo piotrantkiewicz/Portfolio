@@ -12,6 +12,7 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textFieldDollarSighLbl: UILabel!
     @IBOutlet weak var stockValueLbl: UILabel!
+    @IBOutlet weak var sellAllSharesBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var confirmBtnBottomConstraint: NSLayoutConstraint!
     
@@ -36,6 +37,16 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         
         textField.keyboardType = .decimalPad
+        
+        guard let totalPrice = ticker?.totalPrice else { return }
+        
+        let title = "Sell all shares (\(totalPrice))"
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: FontName.intertightSemiBold.rawValue, size: 14)!
+        ]
+        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+        sellAllSharesBtn.setAttributedTitle(attributedTitle, for: .normal)
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -64,7 +75,6 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         subtitleLbl.text = ticker.name
         logoImage.image = ImageUtility.getImageForSymbol(ticker.symbol)
         stockValueLbl.text = String(format: "%.2f", ticker.totalPrice ?? 0.0)
-        textField.text = String(format: "%.2f", ticker.totalPrice ?? 0.0)
         confirmBtn.setCornerRadius(16)
     }
     
@@ -111,6 +121,18 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    @IBAction func sellAllSharesBtnTapped(_ sender: Any) {
+        guard var ticker = ticker else { return }
+        Task {
+            try await stocksRepository.deleteStock(ticker)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .stockSold, object: nil)
+                self.dismiss(animated: true)
+            }
+        }
+    }
+    
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
