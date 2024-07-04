@@ -92,16 +92,38 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
             ticker.totalPrice = price
         }
         
-        Task {
-            try await stocksRepository.addStock(ticker)
-            NotificationCenter.default.post(name: .stockAdded, object: nil)
-            
-            let portfolioVC = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "PortfolioViewController") as! PortfolioViewController
-            portfolioVC.modalPresentationStyle = .fullScreen
-            
-            present(portfolioVC, animated: true)
-        }
+        let prompt = UIAlertController(
+            title: "Please confirm purchase",
+            message: "You’re buying \(ticker.symbol) at $\(ticker.price) per share for the amount of $\(ticker.totalPrice!)",
+            preferredStyle: .alert
+        )
+        
+        prompt.addAction(UIAlertAction(
+            title: "Confirm",
+            style: .default,
+            handler: { [weak self] _ in
+                Task {
+                    do {
+                        try await self?.stocksRepository.addStock(ticker)
+                        NotificationCenter.default.post(name: .stockAdded, object: nil)
+                    
+                        DispatchQueue.main.async {
+                            self?.dismiss(animated: true)
+                        }
+                    } catch {
+                        print("Failed to add stock: \(error)")
+                    }
+                }
+            }
+        ))
+        
+        prompt.addAction(UIAlertAction(
+            title: "Cancel",
+            style: .cancel
+        ))
+        
+        self.present(prompt, animated: true)
+        
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
