@@ -66,17 +66,28 @@ class StocksRepository {
         request.httpMethod = "PATCH"
         request.httpBody = try JSONEncoder().encode(ticker)
         
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, _) = try await URLSession.shared.data(for: request)
         
-        if let httpResponse = response as? HTTPURLResponse {
-            print("HTTP Response Status Code: \(httpResponse.statusCode)")
-        }
-        
-        let responseData = String(data: data, encoding: .utf8) ?? "No response data"
-        print("Response data: \(responseData)")
+        _ = String(data: data, encoding: .utf8) ?? "No response data"
         
         let decoded = try JSONDecoder().decode(Ticker.self, from: data)
         
         print("Updated stock: \(decoded)")
     }
+    
+    func deleteStock(_ ticker: Ticker) async throws {
+        guard let encodedSymbol = ticker.symbol.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
+            throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid stock symbol"])
+        }
+        
+        let url = URL(string: "\(baseURL)/stocks/\(encodedSymbol).json")!
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "DELETE"
+        
+        let _ = try await URLSession.shared.data(for: request)
+        
+        print("Successfully deleted list with symbol \(encodedSymbol)")
+    }
+    
 }

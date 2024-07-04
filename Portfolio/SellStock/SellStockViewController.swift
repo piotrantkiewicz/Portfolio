@@ -87,7 +87,11 @@ class SellStockViewController: UIViewController, UITextFieldDelegate {
         
         Task {
             do {
-                try await stocksRepository.updateStock(ticker)
+                if ticker.price <= 0 {
+                    try await stocksRepository.deleteStock(ticker)
+                } else {
+                    try await stocksRepository.updateStock(ticker)
+                }
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: .stockSold, object: nil)
                     self.dismiss(animated: true)
