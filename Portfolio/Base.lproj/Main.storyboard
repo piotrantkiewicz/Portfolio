@@ -309,10 +309,10 @@
                             <constraint firstItem="a9r-MX-mrm" firstAttribute="trailing" secondItem="jyB-Ck-RtC" secondAttribute="trailing" constant="16" id="GJt-ts-EzF"/>
                             <constraint firstItem="a9r-MX-mrm" firstAttribute="bottom" secondItem="jyB-Ck-RtC" secondAttribute="bottom" constant="10" id="Ktr-eq-8RD"/>
                             <constraint firstItem="Ytb-LH-asg" firstAttribute="top" secondItem="Q32-2U-8y2" secondAttribute="bottom" constant="39" id="aO7-Jj-pCu"/>
+                            <constraint firstItem="Zs4-kH-gMw" firstAttribute="top" secondItem="Ytb-LH-asg" secondAttribute="bottom" constant="120" id="bcy-7c-xH1"/>
                             <constraint firstItem="a9r-MX-mrm" firstAttribute="trailing" secondItem="Zs4-kH-gMw" secondAttribute="trailing" constant="107.5" id="dOc-gA-jdH"/>
                             <constraint firstItem="jyB-Ck-RtC" firstAttribute="leading" secondItem="a9r-MX-mrm" secondAttribute="leading" constant="16" id="dqN-ft-ngY"/>
                             <constraint firstItem="Mvc-yQ-yyB" firstAttribute="top" secondItem="a9r-MX-mrm" secondAttribute="top" id="jdH-L7-Y8n"/>
-                            <constraint firstItem="Zs4-kH-gMw" firstAttribute="top" secondItem="Ytb-LH-asg" secondAttribute="bottom" constant="120" id="naj-Bs-ktx"/>
                             <constraint firstItem="Zs4-kH-gMw" firstAttribute="leading" secondItem="a9r-MX-mrm" secondAttribute="leading" constant="107.5" id="nkP-8j-Uaq"/>
                             <constraint firstItem="a9r-MX-mrm" firstAttribute="trailing" secondItem="Ytb-LH-asg" secondAttribute="trailing" constant="16" id="ulQ-aS-eLe"/>
                             <constraint firstItem="Ytb-LH-asg" firstAttribute="leading" secondItem="a9r-MX-mrm" secondAttribute="leading" constant="16" id="vUI-du-Ddo"/>
@@ -327,6 +327,7 @@
                         <outlet property="logoImage" destination="xll-vZ-dfY" id="GHB-X4-BHO"/>
                         <outlet property="stockValueLbl" destination="M8i-NY-7pW" id="rd4-JZ-1ix"/>
                         <outlet property="subtitleLbl" destination="0lc-OT-JuA" id="Mi9-QH-y50"/>
+                        <outlet property="textBoxTopContstraint" destination="bcy-7c-xH1" id="nfr-wv-4X6"/>
                         <outlet property="textField" destination="vRn-WP-XO8" id="L1Y-Ok-ce6"/>
                         <outlet property="textFieldDollarSighLbl" destination="b3I-QO-teK" id="8dR-Lj-2DL"/>
                         <outlet property="titleLbl" destination="MOH-xL-A62" id="swd-ES-ev2"/>
@@ -339,7 +340,6 @@
         <!--Sell Stock View Controller-->
         <scene sceneID="T69-kx-jou">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mdn-rd-yB3" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SellStockViewController" id="Vrn-zZ-xcZ" customClass="SellStockViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P80-hF-dIk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -469,7 +469,7 @@
                             <constraint firstItem="hQa-xt-6Od" firstAttribute="top" secondItem="bM4-Rb-JVF" secondAttribute="bottom" constant="39" id="6w6-Pa-0ff"/>
                             <constraint firstItem="Uh2-z5-C4T" firstAttribute="leading" secondItem="fDc-TL-m2X" secondAttribute="leading" constant="16" id="7LR-Ef-kE0"/>
                             <constraint firstItem="FSj-7L-1lK" firstAttribute="leading" secondItem="fDc-TL-m2X" secondAttribute="leading" constant="107.5" id="8bc-7x-u8r"/>
-                            <constraint firstItem="FSj-7L-1lK" firstAttribute="top" secondItem="hQa-xt-6Od" secondAttribute="bottom" constant="120" id="Ean-YT-HjW"/>
+                            <constraint firstItem="FSj-7L-1lK" firstAttribute="top" secondItem="hQa-xt-6Od" secondAttribute="bottom" constant="120" id="8sz-7p-DsO"/>
                             <constraint firstItem="hQa-xt-6Od" firstAttribute="leading" secondItem="fDc-TL-m2X" secondAttribute="leading" constant="16" id="WEs-Gi-YOU"/>
                             <constraint firstItem="bM4-Rb-JVF" firstAttribute="centerX" secondItem="P80-hF-dIk" secondAttribute="centerX" id="Y3p-yf-qNf"/>
                             <constraint firstItem="fDc-TL-m2X" firstAttribute="trailing" secondItem="Uh2-z5-C4T" secondAttribute="trailing" constant="16" id="Ytw-QX-QxX"/>
@@ -489,11 +489,13 @@
                         <outlet property="logoImage" destination="uum-Lk-cog" id="YjQ-UL-Wam"/>
                         <outlet property="stockValueLbl" destination="mBr-Os-E85" id="kRK-xs-KM8"/>
                         <outlet property="subtitleLbl" destination="JNS-xH-fEs" id="fYh-by-DLy"/>
+                        <outlet property="textBoxTopConstraint" destination="8sz-7p-DsO" id="wNg-hp-LWn"/>
                         <outlet property="textField" destination="6H4-F0-bsq" id="Npw-RV-XE9"/>
                         <outlet property="textFieldDollarSighLbl" destination="rAw-lT-dTe" id="Vfq-ce-79W"/>
                         <outlet property="titleLbl" destination="gW7-I1-NQn" id="lwn-Bs-jmN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mdn-rd-yB3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1503" y="4"/>
         </scene>

@@ -6,6 +6,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var subtitleLbl: UILabel!
+    @IBOutlet weak var textBoxTopContstraint: NSLayoutConstraint!
     @IBOutlet weak var headlineLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -105,6 +106,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            textBoxTopContstraint.constant = 60
             confirmBtnBottomConstraint.constant = keyboardFrame.height + 10
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
@@ -113,6 +115,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
+        textBoxTopContstraint.constant = 120
         confirmBtnBottomConstraint.constant = 10
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
