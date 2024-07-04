@@ -12,6 +12,7 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldDollarSighLbl: UILabel!
     @IBOutlet weak var stockValueLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var confirmBtnBottomConstraint: NSLayoutConstraint!
     
     var ticker: Ticker?
     
@@ -34,11 +35,19 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         
         textField.keyboardType = .decimalPad
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         textField.becomeFirstResponder()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func configure() {
@@ -91,6 +100,22 @@ class BuyStockViewController: UIViewController, UITextFieldDelegate {
             portfolioVC.modalPresentationStyle = .fullScreen
             
             present(portfolioVC, animated: true)
+        }
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            confirmBtnBottomConstraint.constant = keyboardFrame.height + 10
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        confirmBtnBottomConstraint.constant = 10
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
     }
 }

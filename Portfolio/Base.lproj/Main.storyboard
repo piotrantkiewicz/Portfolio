@@ -311,6 +311,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="Ytb-LH-asg" id="JIm-xJ-WFV"/>
                         <outlet property="confirmBtn" destination="jyB-Ck-RtC" id="6bV-ow-ReR"/>
+                        <outlet property="confirmBtnBottomConstraint" destination="Ktr-eq-8RD" id="Dhe-sz-uat"/>
                         <outlet property="descriptionLbl" destination="5I1-pP-1Rz" id="MaQ-kR-8P8"/>
                         <outlet property="headlineLbl" destination="55N-bY-r0x" id="yjE-kX-GzB"/>
                         <outlet property="logoImage" destination="xll-vZ-dfY" id="GHB-X4-BHO"/>
@@ -461,6 +462,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="hQa-xt-6Od" id="BVO-0f-ZVs"/>
                         <outlet property="confirmBtn" destination="Uh2-z5-C4T" id="ovF-Mt-IyU"/>
+                        <outlet property="confirmBtnBottomConstraint" destination="3PG-8j-cd0" id="9yc-O9-B3d"/>
                         <outlet property="descriptionLbl" destination="BSX-vF-Skc" id="dGA-Ch-leT"/>
                         <outlet property="headlineLbl" destination="flr-ru-Jvh" id="mCU-L8-XZT"/>
                         <outlet property="logoImage" destination="uum-Lk-cog" id="YjQ-UL-Wam"/>
